@@ -1,8 +1,9 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #1b0f12;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -12,15 +13,24 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Su un wrapper normale (non html/body) il background-size percentuale
+   si calcola correttamente, senza la circolarità altezza/auto di body. */
+.page-gradient {
+  background-image: linear-gradient(
+    to bottom,
+    #000000 0%,
+    #030203 45%,
+    #070405 65%,
+    #0d0709 80%,
+    #150c0f 92%,
+    #1b0f12 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
