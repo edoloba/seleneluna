@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Blackswan",
+  title: "Seleneluna",
   description: "Photography portfolio",
 };
 
