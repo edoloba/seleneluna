@@ -59,7 +59,7 @@ export default async function CampaignPage({
               {displayTitle || campaign.title}
             </FitText>
             <div
-              className="prose prose-invert text-[12px] max-h-[50vh] max-w-none overflow-y-auto pb-2 pr-2 md:mb-14 md:self-end text-align-right uppercase"
+              className="prose prose-invert text-sm max-h-[50vh] max-w-none overflow-y-auto pb-2 pr-2 md:text-base md:mb-14 md:self-end text-align-right uppercase"
               dangerouslySetInnerHTML={{
                 __html: campaign.campaignFields.description,
               }}
