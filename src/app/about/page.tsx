@@ -38,7 +38,7 @@ export default async function AboutPage() {
             </FitText>
             {intro && (
               <div
-                className="text-sm uppercase leading-relaxed text-white/90 md:mb-14 md:self-end md:text-base [&_p+p]:mt-4"
+                className="text-sm uppercase leading-relaxed text-white/90 md:mb-14 md:self-end md:text-[12px] [&_p+p]:mt-4"
                 dangerouslySetInnerHTML={{ __html: intro }}
               />
             )}
