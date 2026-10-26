@@ -65,6 +65,7 @@ export async function getAbout() {
         displayTitle: string | null;
         intro: string | null;
         body: string | null;
+        contact: string | null;
         signature: string | null;
         portrait: { node: WPImage } | null;
       };

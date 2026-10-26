@@ -83,6 +83,7 @@ export const GET_ABOUT = gql`
         displayTitle
         intro
         body
+        contact
         signature
         portrait {
           node {

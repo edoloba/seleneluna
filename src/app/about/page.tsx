@@ -10,7 +10,8 @@ export default async function AboutPage() {
     notFound();
   }
 
-  const { displayTitle, intro, body, signature, portrait } = page.aboutFields;
+  const { displayTitle, intro, body, contact, signature, portrait } =
+    page.aboutFields;
   const image = portrait?.node;
   // Senza immagine, usa la copertina del primo progetto come sfondo.
   const background = image ?? campaigns[0]?.campaignFields.coverImage?.node;
@@ -58,7 +59,7 @@ export default async function AboutPage() {
                 alt={image.altText || page.title}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover grayscale"
+                className="object-cover"
               />
             </div>
           )}
@@ -67,6 +68,12 @@ export default async function AboutPage() {
               className="text-sm uppercase leading-relaxed text-white/90 md:mb-14 md:self-end md:text-base [&_p+p]:mt-4"
               dangerouslySetInnerHTML={{ __html: body || page.content }}
             />
+            {contact && (
+              <div
+                className="mt-10 text-sm uppercase leading-relaxed text-white/90 md:text-base [&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:opacity-70 [&_a_*]:underline [&_a_*]:underline-offset-4 [&_p+p]:mt-4"
+                dangerouslySetInnerHTML={{ __html: contact }}
+              />
+            )}
             {signature && (
               <p className="pt-16 text-right text-xl uppercase tracking-wide text-[#ca0200] md:text-3xl">
                 {signature}
